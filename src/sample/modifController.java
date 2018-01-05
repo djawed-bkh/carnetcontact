@@ -59,7 +59,7 @@ public class modifController {
     }
     public void insert() {
 
-        String sql = "INSERT INTO CONTACT(NOM,PRENOM,VILLE,CPOSTAL,ANNIV,RUE) VALUES(?,?)";
+        String sql = "INSERT INTO CONTACT(NOM,PRENOM,VILLE,CPOSTAL,ANNIV,RUE) VALUES(?,?,?,?,?,?)";
 
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
