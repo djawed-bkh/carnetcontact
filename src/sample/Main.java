@@ -59,9 +59,9 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-           // create();
+           create();
             creation=true;
-           // createNewTable();
+          createNewTable();
         launch(args); }
 
 }

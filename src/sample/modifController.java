@@ -81,7 +81,7 @@ public class modifController {
         insert();
         ((Node) (event.getSource())).getScene().getWindow().hide();
         System.out.println("verification");
-        Parent root = FXMLLoader.load(getClass().getResource("/sample/carnetController.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/sample.fxml"));
         Stage primaryStage = new Stage();
         primaryStage.setTitle("carnet de contact");
         primaryStage.setScene(new Scene(root));
