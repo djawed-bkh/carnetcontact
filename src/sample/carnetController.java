@@ -56,7 +56,41 @@ public void ajout(ActionEvent event) throws IOException {
     primaryStage.setResizable(false);
     primaryStage.show();
 }
-public void affiche(ActionEvent event){
+    public class SelectApp {
+
+        private Connection connect() {
+            // SQLite connection string
+            String url = "jdbc:sqlite:tuto.db";
+            Connection conn = null;
+            try {
+                conn = DriverManager.getConnection(url);
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            return conn;
+        }
+
+
+        public void consulter(){
+            String sql = "SELECT ID,NOM,PRENOM,VILLE,CPOSTAL,ANNIV,RUE FROM CONTACT";
+
+            try (Connection conn = this.connect();
+                 Statement stmt  = conn.createStatement();
+                 ResultSet rs    = stmt.executeQuery(sql)){
+
+
+
+                          prenom.setText(rs.getString("NOM"));
+                            nom.setText(rs.getString("PRENOM"));
+                            city.setText(rs.getString("VILLE"));
+                            cpostal.setText(rs.getString("CPOSTAL"));
+                            anniv.setText(rs.getString("ANNIV"));
+                           rue.setText(rs.getString("RUE"));
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }}
+
+        public void affiche(ActionEvent event){
     prenom.setText("");
     nom.setText("");
     city.setText("");
@@ -65,4 +99,4 @@ public void affiche(ActionEvent event){
     rue.setText("");
 
 }
-}
+}}
